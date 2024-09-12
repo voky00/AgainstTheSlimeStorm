@@ -97,13 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2603dbf24482e47bab3ed7cf9f73aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 40
+  Hp: 4
   Speed: 20
-  Damage: 5
+  Damage: 1
   AttackCooldown: 1
   CastleDamage: 1
   row: 1
-  targetTile: 8
   nextTarget: {fileID: 0}
 --- !u!136 &7843598870154903640
 CapsuleCollider:
