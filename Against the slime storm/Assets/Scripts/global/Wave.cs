@@ -8,6 +8,7 @@ public class Wave : MonoBehaviour
     public float time;
     public float spawnTime;
     public GameObject[] enemies;
+    public Material[] materials;
     public GameObject spawnPoint;
 
     public int timeBetweenWave = 20;
@@ -23,6 +24,7 @@ public class Wave : MonoBehaviour
         spawnTime = 0;
         waveTime = 0;
         currentNumber = 0;
+       
     }
     void Update()
     {
@@ -55,8 +57,10 @@ public class Wave : MonoBehaviour
         }
         lastNumber = randomNumber;
         currentNumber--;
-        Slime slime = Instantiate(enemies[0], spawnPoint.transform.position, Quaternion.identity).GetComponent<Slime>();
+        Slime slime = Instantiate(enemies[0], spawnPoint.transform.position, Quaternion.identity).GetComponentInChildren<Slime>();
         slime.row = randomNumber;
+        slime.material = materials[UnityEngine.Random.Range(0, materials.Length)];
+        slime.GetComponentInChildren<Renderer>().material = slime.material;
         spawnTime = 0;
         
     }

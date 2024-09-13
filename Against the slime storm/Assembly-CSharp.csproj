@@ -101,6 +101,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\entities\Tile.cs" />
+    <Compile Include="Assets\Scripts\global\MenuManager.cs" />
     <Compile Include="Assets\Scripts\global\Wave.cs" />
     <Compile Include="Assets\Scripts\menus\Tooltip.cs" />
     <Compile Include="Assets\Scripts\global\Bar.cs" />

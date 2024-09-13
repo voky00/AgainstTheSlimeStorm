@@ -10,10 +10,14 @@ public class Slime : MonoBehaviour
     public float AttackCooldown = 1;
     public int CastleDamage = 1;
 
+    public Material hitMaterial;
+
     Tower targetTower;
     public int row=1;
     private int targetTile=9;
     public GameObject nextTarget;
+
+    public Material material;
 
     private void Awake()
     {
@@ -42,12 +46,18 @@ public class Slime : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        transform.GetComponentInChildren<Renderer>().material = hitMaterial;
+        Invoke("ResetMaterial", 0.2f);
         Hp -= damage;
         if (Hp <= 0)
         {
             //todo
             Destroy(gameObject);
         }
+    }
+    public void ResetMaterial()
+    {
+        transform.GetComponentInChildren<Renderer>().material = material;
     }
     public void Move()
     {
@@ -84,7 +94,7 @@ public class Slime : MonoBehaviour
     }
     public void Attack()
     {
-        //Debug.Log(targetTower.Hp);
+        transform.GetComponentInChildren<Animator>().Play("Attack");
         targetTower.TakeDamage(Damage);
     }
   

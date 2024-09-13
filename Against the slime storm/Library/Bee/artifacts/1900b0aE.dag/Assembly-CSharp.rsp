@@ -359,6 +359,7 @@
 "Assets/Scripts/entities/Tower.cs"
 "Assets/Scripts/global/Bar.cs"
 "Assets/Scripts/global/GameManager.cs"
+"Assets/Scripts/global/MenuManager.cs"
 "Assets/Scripts/global/Wave.cs"
 "Assets/Scripts/menus/FadingText.cs"
 "Assets/Scripts/menus/Tooltip.cs"

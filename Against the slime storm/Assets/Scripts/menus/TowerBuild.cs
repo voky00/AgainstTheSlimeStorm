@@ -14,7 +14,8 @@ public class TowerBuild : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (GameManager.Instance.Money >= Tower.goldCost && GameManager.Instance.Lumber >= Tower.woodCost)
         {
-            Tower tower = Instantiate(Tower, GameManager.Instance.selectedTile.transform.position, Quaternion.identity);
+            //instantiate tower 90 degrees rotated
+            Tower tower = Instantiate(Tower, GameManager.Instance.selectedTile.transform.position + new Vector3(0,5,0), Quaternion.Euler(0, 90, 0));
             tower.transform.SetParent(GameManager.Instance.selectedTile.transform);
             GameManager.Instance.Money -= Tower.goldCost;
             GameManager.Instance.Lumber -= Tower.woodCost;

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject menu;
     public GameObject selectedTile;
     public GameObject TowerMenu;
     public GameObject UpgradeMenu;
@@ -27,6 +29,22 @@ public class GameManager : MonoBehaviour
     {
         moneyText.text = "Gold: " + Money.ToString();
         lumberText.text = "Wood: " + Lumber.ToString();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                menu.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                menu.SetActive(true);
+            }
+        }
+        
+       
     }
     public void Awake()
     {

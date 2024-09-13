@@ -45,7 +45,7 @@ public class Tower : MonoBehaviour
     }
     public void Attack()
     {
-        
+        gameObject.GetComponent<Animator>().Play("Attack");
         Bullet bulet = Instantiate(bullet, transform.position + new Vector3(0,30,10), Quaternion.identity);
         bulet.tower = this;
     }
